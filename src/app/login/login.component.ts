@@ -12,7 +12,7 @@ export class LoginComponent {
   loginForm = this._fb.group({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
-    role: new FormControl('', [Validators.required])
+    roles: new FormControl('', [Validators.required])
   });
  isLoggedIn = false;
  roles: any;
@@ -24,15 +24,12 @@ export class LoginComponent {
  {
    this.displayLoading=true;
    this.isLoggedIn = true;
-   this._user.login(loginData).subscribe(
-    (result) =>{
+   this._user.login(loginData).subscribe({
+    next: result =>{
     console.log("Logged in successfully");
     this.displayLoading=false;
     this.isLoggedIn = false;
-    }, (err) => {
-      //console.log("Error in login process");
-      this.displayLoading = false;
-      this.displayError=true;
+    }
     })
 
     this._router.navigate(['/userHome']);

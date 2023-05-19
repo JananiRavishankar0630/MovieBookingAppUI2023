@@ -1,0 +1,39 @@
+<br>
+<br>
+<div>
+    <form class="form-vertical justify-content-center" [formGroup]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
+        <div class="form-group">
+            <label class="control-label" for="userId" style="text-align: left;">UserId</label><br>
+            <input type="text" class="form-control" formControlName="userId" placeholder="Enter User Id" ngModel
+                required>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="FirstName" style="text-align: left;">FirstName</label><br>
+            <input type="text" class="form-control" formControlName="FirstName" placeholder="Enter FirstName" ngModel
+                required>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="LastName" style="text-align: left;">LastName</label><br>
+            <input type="text" class="form-control" formControlName="LastName" placeholder="Enter LastName" ngModel
+                required>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="EmailId" style="text-align: left;">EmailId</label><br>
+            <input type="email" class="form-control" formControlName="EmailId" placeholder="Enter EmailId" ngModel
+                required>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="Password">Password</label><br>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" ngModel
+                required />
+
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="ContactNo" style="text-align: left;">ContactNo</label><br>
+            <input type="text" class="form-control" formControlName="ContactNo" placeholder="Enter ContactNo" ngModel>
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Register</button>
+    </form>
+</div>
+
+

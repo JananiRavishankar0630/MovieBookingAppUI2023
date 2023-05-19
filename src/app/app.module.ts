@@ -10,12 +10,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoginComponent } from './login/login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
