@@ -11,13 +11,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoginComponent } from './login/login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { GetMoviesComponent } from './get-movies/get-movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserHomeComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    GetMoviesComponent
   ],
   imports: [
     BrowserModule,
