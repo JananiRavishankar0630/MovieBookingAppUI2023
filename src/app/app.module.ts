@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { GetMoviesComponent } from './get-movies/get-movies.component';
+import { AuthGuard } from './guards/auth-guards.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { GetMoviesComponent } from './get-movies/get-movies.component';
     RouterModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

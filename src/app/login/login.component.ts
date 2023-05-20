@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -25,20 +26,39 @@ export class LoginComponent {
    this.displayLoading=true;
    this.isLoggedIn = true;
    this._user.login(loginData).subscribe({
-    next: result =>{
-    console.log("Logged in successfully");
-    this.displayLoading=false;
-    this.isLoggedIn = false;
-    }
-    })
-
-    this._router.navigate(['/userHome']);
+    next: result =>
+    {
+      const token = result.token;
+      localStorage.setItem("jwt", token);
+      console.log("Logged in successfully");
+      this.displayLoading=false;
+      this.isLoggedIn = false;
+      this._router.navigate(['/userHome']);
+    }/* , err => {
+      this.displayError = true;
+      this.displayLoading = false; */
+    })    
  }
 
+ isUserAuthenticated() {
+  const token = localStorage.getItem("jwt");
+  if (token && !this.jwtHelper.isTokenExpired(token)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+public logOut = () => {
+  localStorage.removeItem("jwt");
+  this._router.navigate(["/"]);
+}
  //Error in login
 
  constructor(private _router: Router,
    private _fb: FormBuilder, 
-   private _user: UserService)
+   private _user: UserService,
+   private jwtHelper: JwtHelperService)
    {}
 }
