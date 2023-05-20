@@ -4,7 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { JwtModule } from "@auth0/angular-jwt";
-
+import { GetMoviesComponent } from './get-movies/get-movies.component';
+import { AuthGuard } from './guards/auth-guards.service';
 
 const routes: Routes = [
   { 
@@ -18,6 +19,11 @@ const routes: Routes = [
   { 
     path: 'register', 
     component: UserRegistrationComponent
+  },
+  {
+    path: 'getmovies',
+    component: GetMoviesComponent
+    //canActivate: [AuthGuard]
   }
       //{ path: 'register', component: RegisterComponent }
 ];

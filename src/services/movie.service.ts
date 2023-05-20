@@ -15,7 +15,7 @@ export class MovieService {
 
   constructor(private _http:HttpClient) { }
 
-  getMovies(MovieDetail: MovieDetail) : Observable<any>
+  getMovies(): Observable<any>
   {
       return this._http.get<MovieDetail>(baseUrl + '/movie', httpOptions);
   }

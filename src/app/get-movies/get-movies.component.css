@@ -1,0 +1,10 @@
+.input-group
+{   margin:0;   padding:0;   border:none; width:80%;}
+.card
+{
+   border-style: double;
+}
+.card-img-top
+{
+   max-width: 100%;
+}

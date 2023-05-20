@@ -9,13 +9,14 @@ import { MovieService } from 'src/services/movie.service';
   styleUrls: ['./get-movies.component.css']
 })
 export class GetMoviesComponent {
+  search : String =" ";
   movieList: MovieDetail[] | any;
   constructor(private _router: Router,
     private _mv: MovieService) {}
-
-  getMovies(MovieDetail: MovieDetail)
+    ngOnInit(): void
+  //getMovies(MovieDetail: MovieDetail)
   {
-    this._mv.getMovies(MovieDetail).subscribe({
+    this._mv.getMovies().subscribe({
       next: result => {
         console.log("List of Movies");
         this.movieList = result;

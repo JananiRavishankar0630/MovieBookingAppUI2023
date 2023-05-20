@@ -13,6 +13,9 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { GetMoviesComponent } from './get-movies/get-movies.component';
 import { AuthGuard } from './guards/auth-guards.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,12 @@ import { AuthGuard } from './guards/auth-guards.service';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatIconModule,
+    MatFormFieldModule  
   ],
   providers: [AuthGuard],
+  //providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
