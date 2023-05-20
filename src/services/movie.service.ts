@@ -20,9 +20,9 @@ export class MovieService {
       return this._http.get<MovieDetail>(baseUrl + '/movie', httpOptions);
   }
 
-  getMoviesByName(MovieDetail: MovieDetail) : Observable<any>
+  getMoviesByName(movieName: string) : Observable<any>
   {
-      return this._http.get<MovieDetail>(baseUrl + '/movie/getmoviebyname/' + MovieDetail.MovieName, httpOptions);
+      return this._http.get<MovieDetail>(baseUrl + '/movie/getmoviebyname/' + movieName, httpOptions);
   }
 
 }

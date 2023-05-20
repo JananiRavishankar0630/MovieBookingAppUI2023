@@ -1,23 +1,23 @@
 <div class="input-group row">
  <div class="col-md-8">
-        <input id="search-input" type="search" id="form1" placeholder="Search for movie name" class="form-control" />
+        <input id="search-input" type="search" #form1 placeholder="Search for movie name" class="form-control" />
     </div>
     <div class="col-md-2">
-      <button id="search-button" type="button" class="btn btn-primary">
+      <button id="search-button" type="button" class="btn btn-primary" (click)="getMoviesByName(form1.value)">
         <mat-icon>search</mat-icon>
       </button>
     </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="resultUpdated">
   <div class="column" *ngFor="let movie of movieList">
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="assets\images\Vikram.jpg" alt="Card image cap">
+        <img class="card-img-top" src="assets\images\Kanthara.jpg" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text">Moviename</p>
+          <p class="card-text">{{movie.movieName}}</p>
+          <p class="card-text">{{movie.theatreName}}</p>
         </div>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>&nbsp;
-            <a href="#" class="card-link">Another link</a>
+        <div class="card-body" style="text-align: right;">
+            <a href="#" class="card-link">Book Ticket</a>
           </div>
       </div>
     </div>
