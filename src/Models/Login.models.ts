@@ -12,3 +12,9 @@ export interface UserDetail {
     Password: string,
     ContactNo: number
 }
+
+export interface ResetPassword {
+    token: string,
+    Password: string,
+    ConfirmPassword: string
+}

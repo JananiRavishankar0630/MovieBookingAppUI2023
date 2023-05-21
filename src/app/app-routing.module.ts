@@ -7,6 +7,8 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { GetMoviesComponent } from './get-movies/get-movies.component';
 import { AuthGuard } from './guards/auth-guards.service';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   { 
@@ -29,8 +31,16 @@ const routes: Routes = [
   {
     path: 'admin-dash',
     component: AdminDashboardComponent
+  },
+  {
+    path: 'forgotpassword',
+    component: ForgotPasswordComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent
   }
-      //{ path: 'register', component: RegisterComponent }
+  
 ];
 
 

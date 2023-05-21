@@ -1,7 +1,7 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Login, UserDetail } from 'src/Models/Login.models';
+import { Login, ResetPassword, UserDetail } from 'src/Models/Login.models';
 
 const baseUrl = "https://localhost:7083";
 
@@ -32,9 +32,9 @@ export class UserService {
       return this._http.post<any>(baseUrl + '/forgot-password/', emailId, httpOptions);
   }
 
-  resetPassword() : Observable<any>
+  resetPassword(data: ResetPassword) : Observable<any>
   {
-      return this._http.post<any>(baseUrl + '/reset-password', httpOptions);
+      return this._http.post<ResetPassword>(baseUrl + '/reset-password' + data, httpOptions);
   }
   
 }

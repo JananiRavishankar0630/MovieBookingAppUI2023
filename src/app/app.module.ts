@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     UserHomeComponent,
     UserRegistrationComponent,
     GetMoviesComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
