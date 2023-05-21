@@ -1,0 +1,15 @@
+.input-group
+{   margin:0;   padding:0;   border:none; width:80%;}
+.card
+{
+   border-style:ridge;
+}
+.card-img-top
+{
+   max-width: 100%;
+}
+.column {
+   float: left;
+   width: 25%;
+   padding: 0 10px;
+ }

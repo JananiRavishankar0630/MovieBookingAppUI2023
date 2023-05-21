@@ -16,6 +16,7 @@ import { AuthGuard } from './guards/auth-guards.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
     LoginComponent,
     UserHomeComponent,
     UserRegistrationComponent,
-    GetMoviesComponent
+    GetMoviesComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

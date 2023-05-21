@@ -6,6 +6,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { JwtModule } from "@auth0/angular-jwt";
 import { GetMoviesComponent } from './get-movies/get-movies.component';
 import { AuthGuard } from './guards/auth-guards.service';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { 
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'getmovies',
     component: GetMoviesComponent
     //canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin-dash',
+    component: AdminDashboardComponent
   }
       //{ path: 'register', component: RegisterComponent }
 ];
