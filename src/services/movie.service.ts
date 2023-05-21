@@ -1,10 +1,10 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {  } from 'src/Models/Login.models';
 import { MovieDetail } from 'src/Models/Movie.models';
+import { Ticket } from 'src/Models/Ticket.models';
 
-const baseUrl = "https://localhost:7083";
+const baseUrl = "https://localhost:7083/movie";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -17,12 +17,26 @@ export class MovieService {
 
   getMovies(): Observable<any>
   {
-      return this._http.get<MovieDetail>(baseUrl + '/movie', httpOptions);
+      return this._http.get<MovieDetail>(baseUrl, httpOptions);
   }
 
   getMoviesByName(movieName: string) : Observable<any>
   {
-      return this._http.get<MovieDetail>(baseUrl + '/movie/getmoviebyname/' + movieName, httpOptions);
+      return this._http.get<MovieDetail>(baseUrl + '/getmoviebyname/' + movieName, httpOptions);
   }
 
+  getTicketId(movieName: string) : Observable<any>
+  {
+      return this._http.get<Ticket>(baseUrl + '/getmoviebyname/' + movieName, httpOptions);
+  }
+
+  updateTicketStatus(ticketId: string): Observable<any>
+  {
+    return this._http.put<any>(baseUrl + '/updateticketstatus/' + ticketId , httpOptions);
+  }
+
+  deleteMovie(movieName: string): Observable<any>
+  {
+    return this._http.delete<any>(baseUrl + '/deletemovie/' + movieName, httpOptions);
+  }
 }
