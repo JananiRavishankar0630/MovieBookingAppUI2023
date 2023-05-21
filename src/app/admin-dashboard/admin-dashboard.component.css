@@ -2,7 +2,7 @@
 {   margin:0;   padding:0;   border:none; width:80%;}
 .card
 {
-   border-style:ridge;
+   border-style:ridge; width:500px;
 }
 .card-img-top
 {
@@ -12,4 +12,9 @@
    float: left;
    width: 25%;
    padding: 0 10px;
+ }
+ .card-title
+ {
+    text-align: center; font-weight: bold; font-family: 'Times New Roman', Times, serif;
+    
  }

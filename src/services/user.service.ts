@@ -26,4 +26,15 @@ export class UserService {
   {
     return this._http.post<UserDetail>(baseUrl + '/user/register', userData, httpOptions);
   }
+
+  forgotPassword(emailId: any) : Observable<any>
+  {
+      return this._http.post<any>(baseUrl + '/forgot-password/', emailId, httpOptions);
+  }
+
+  resetPassword() : Observable<any>
+  {
+      return this._http.post<any>(baseUrl + '/reset-password', httpOptions);
+  }
+  
 }

@@ -27,7 +27,7 @@ export class MovieService {
 
   getTicketId(movieName: string) : Observable<any>
   {
-      return this._http.get<Ticket>(baseUrl + '/getmoviebyname/' + movieName, httpOptions);
+      return this._http.get<any>(baseUrl + '/GetTicketId/' + movieName, httpOptions);
   }
 
   updateTicketStatus(ticketId: string): Observable<any>

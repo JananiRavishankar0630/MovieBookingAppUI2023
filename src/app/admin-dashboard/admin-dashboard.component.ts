@@ -9,7 +9,7 @@ import { MovieService } from 'src/services/movie.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-  search: any = "";
+  ticketID: any = "";
   resultUpdated: Boolean = false;
   movieList: MovieDetail[] | any;
   
@@ -39,6 +39,29 @@ export class AdminDashboardComponent {
 
   getTicketId(movieName: string)
   {
+    this._mv.getTicketId(movieName).subscribe({
+      next:result =>
+      {
+        //this.ticketID = result;
+        //console.log(this.ticketID);
+        console.log(result);
+        this.ticketID = result;
+        this.updateTicketStatus(result.ticketId);
+        return result;
+      }
+    })
+    console.log(this.ticketID);
     
   }
+
+  updateTicketStatus(ticketId: string)
+  {
+    this._mv.updateTicketStatus(ticketId).subscribe({
+      next:result =>
+      {
+       console.log(result);
+      }
+    })
+  }
+
 }
