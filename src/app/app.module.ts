@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoginComponent } from './login/login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
@@ -15,10 +15,10 @@ import { GetMoviesComponent } from './get-movies/get-movies.component';
 import { AuthGuard } from './guards/auth-guards.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     GetMoviesComponent,
     AdminDashboardComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    BookMovieTicketComponent
   ],
   imports: [
     BrowserModule,

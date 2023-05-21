@@ -11,11 +11,11 @@ import { UserService } from 'src/services/user.service';
 })
 export class ResetPasswordComponent {
   resetPasswordform = this._fb.group({
-    token: new FormControl,
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required])
   });
-  resetPassword(data: ResetPassword) {
+  resetPassword(data: any) {
     
     this._user.resetPassword(data).subscribe({
       next: result => { console.log(result); 
