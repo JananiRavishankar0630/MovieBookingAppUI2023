@@ -9,6 +9,7 @@ import { AuthGuard } from './guards/auth-guards.service';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.component';
 
 const routes: Routes = [
   { 
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'reset-password',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'bookticket',
+    component: BookMovieTicketComponent
   }
   
 ];

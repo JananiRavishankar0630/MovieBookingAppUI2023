@@ -16,6 +16,7 @@ export class ResetPasswordComponent {
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required])
   });
+<<<<<<< HEAD
 
 ngOnInit(): void 
 {
@@ -25,6 +26,8 @@ ngOnInit(): void
   })
 }
 
+=======
+>>>>>>> 9ee34307fc948cdd7032218b9b53e9f0f3a91d3a
   resetPassword(data: any) {
     
     this._user.resetPassword(data).subscribe({
