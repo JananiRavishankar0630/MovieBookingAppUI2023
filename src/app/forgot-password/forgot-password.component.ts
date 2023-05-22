@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
+import { HttpParams } from '@angular/common/http'; 
+
+let queryParams = new HttpParams(); 
 
 @Component({
   selector: 'app-forgot-password',
@@ -13,7 +16,10 @@ export class ForgotPasswordComponent {
       next: result => { console.log(result); 
     }
     })
-    this._route.navigate(['/reset-password'])
+    this._route.navigate(['/reset-password'],
+    {queryParams:{
+      username: emailId
+    }})
   }
 
   constructor(private _user:UserService,

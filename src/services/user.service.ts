@@ -29,10 +29,10 @@ export class UserService {
 
   forgotPassword(emailId: any) : Observable<any>
   {
-      return this._http.post<any>(baseUrl + '/forgot-password/', emailId, httpOptions);
+      return this._http.post<any>(baseUrl + '/forgot-password/'+ emailId, httpOptions);
   }
 
-  resetPassword(data: ResetPassword) : Observable<any>
+  resetPassword(data: any) : Observable<any>
   {
       return this._http.post<ResetPassword>(baseUrl + '/reset-password' + data, httpOptions);
   }
