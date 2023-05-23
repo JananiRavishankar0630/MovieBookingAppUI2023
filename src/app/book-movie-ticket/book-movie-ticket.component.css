@@ -32,16 +32,16 @@ table,tr, td, th {
   img{
     border: none;
   }
-  .squaredOne {
-    width: 28px;
-    height: 28px;
-    position: relative;
-    margin: 20px auto;
-    background: #fcfff4;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-    
-    }
+  
+  .green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
 
   .hide {
      opacity: 0;
   }
+

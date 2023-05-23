@@ -16,8 +16,9 @@
         <tbody>
             <tr *ngFor="let row of data.rowHeader">
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
-                <td *ngFor="let col of data.columnHeader">
-                    <span><button type="submit"><img class="movieicon" src="assets/images/armchair.png">
+                <td *ngFor="let col of data.columnHeader; let i = index;">
+                    <span><button type="submit" [ngStyle]="{backgroundColor: bgColor}"
+                        (click)="onSelection(col,row)"><img class="movieicon" src="assets/images/armchair.png">
                 </button></span></td>
             </tr>
         </tbody>
