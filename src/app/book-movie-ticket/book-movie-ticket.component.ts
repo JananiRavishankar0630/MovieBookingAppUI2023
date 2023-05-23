@@ -7,9 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./book-movie-ticket.component.css']
 })
 export class BookMovieTicketComponent {
+  name = "Angular";
+
+  data = {
+    rowHeader : ['A','B','C','D'],
+    columnHeader: ['1','2','3','4'],
+    //Price: ["$5", "$10", "$15"],
+    //Brand: ["B1", "B2", "B3"]
+  }; 
   
-rows: string[] = ['A','B','C','D'];
-cols: string[] = ['1','2','3','4'];
+onSelection()
+{
+  
+}
+
+
+
+ngOnInit() {
+  
+}
 
   
 }

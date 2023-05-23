@@ -4,17 +4,20 @@
 
     <table class="txt-center" style="text-align:center;">
        
-        <thead style="background-color:burlywood;">
-            <tr class="thead-dark">
+        <thead style="text-align: center;">
+            <tr>
                 <td></td>
-                <td *ngFor="let col of cols">
-                    {{col}}&nbsp;
+                <td *ngFor="let col of data.columnHeader">
+                    <span style="display:inline-flex;width:50px;min-width:50px"> 
+                     <td>{{col}}</td></span>
                 </td>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of rows">{{row}}
-                <td *ngFor="let col of cols"><span><button type="submit"><img class="movieicon" src="assets/images/armchair.png">
+            <tr *ngFor="let row of data.rowHeader">
+                <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
+                <td *ngFor="let col of data.columnHeader">
+                    <span><button type="submit"><img class="movieicon" src="assets/images/armchair.png">
                 </button></span></td>
             </tr>
         </tbody>
@@ -22,10 +25,11 @@
     <table>
         <tr>
             <td>
-                <input type="checkbox" > Booked Seats &nbsp;
+                <input type="checkbox" >Booked Seats &nbsp;
                 <input type="checkbox"> Selected Seats &nbsp;
                 <input type="checkbox"> Remaining Seats 
             </td>
         </tr>
-    </table>
+    </table>    
 </div>
+

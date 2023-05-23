@@ -9,7 +9,8 @@
 .movieicon
 {
     font-size: 5px;
-    width:10em;
+    width:1cm;
+    
 }
 img:hover {
     opacity: 1.0;
@@ -25,8 +26,9 @@ table,tr, td, th {
     padding: 10px;
     margin: auto;    
     border: none;   
-    text-align :center;
-  }
+    text-align :justify;
+   }
+  
   img{
     border: none;
   }
@@ -36,7 +38,10 @@ table,tr, td, th {
     position: relative;
     margin: 20px auto;
     background: #fcfff4;
-    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
     box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
     
     }
+
+  .hide {
+     opacity: 0;
+  }
