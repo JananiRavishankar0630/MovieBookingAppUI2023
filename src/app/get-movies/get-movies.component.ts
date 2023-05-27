@@ -1,7 +1,11 @@
+import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MovieDetail } from 'src/Models/Movie.models';
 import { MovieService } from 'src/services/movie.service';
+
+//let queryParams = new HttpParams(); 
 
 @Component({
   selector: 'app-get-movies',
@@ -11,11 +15,11 @@ import { MovieService } from 'src/services/movie.service';
 export class GetMoviesComponent {
   search: any = "";
   resultUpdated: Boolean = false;
-  movieList: MovieDetail[] | any;
-  
+  movieList: MovieDetail[] | any;  
 
   constructor(private _router: Router,
-    private _mv: MovieService) { }
+    private _mv: MovieService,
+    private _fb:FormBuilder) { }
   ngOnInit(): void {
     this._mv.getMovies().subscribe({
       next: result => {
@@ -46,5 +50,13 @@ export class GetMoviesComponent {
     console.log(this.search);
   }
 
+  onBooking(movieName: string,theatreName: string)
+  {
+    this._router.navigate(['/bookticket'],
+    {queryParams:{
+      movie: movieName,
+      theatre: theatreName
+    }})
+  }
   
 }

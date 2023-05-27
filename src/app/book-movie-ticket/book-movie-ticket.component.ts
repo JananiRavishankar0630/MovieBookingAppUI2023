@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const selectedSeats: string[] = [];
 @Component({
@@ -7,31 +8,33 @@ const selectedSeats: string[] = [];
   styleUrls: ['./book-movie-ticket.component.css']
 })
 export class BookMovieTicketComponent {
-   bgColor : string = 'grey';
-   toggle = false;
-   status = 'Enable'; 
-  
-  
   data = {
-    rowHeader : ['A','B','C','D'],
-    columnHeader: ['1','2','3','4'],
-    //Price: ["$5", "$10", "$15"],
-    //Brand: ["B1", "B2", "B3"]
+    rowHeader : ['A','B','C','D','E','F','G'],
+    columnHeader: ['1','2','3','4','5','6','7']
   }; 
+  movie:any;
+  theatre: any;
   
-onSelection(column: any, row:any)
+onSelection(column: any, row:any, movie:any,theatre: any)
 {
-  this.bgColor = 'green';
-  //this.toggle = !this.toggle;
-  //this.status = this.toggle ? 'Enable' : 'Disable';
   selectedSeats.push(row + column);
-  console.log(selectedSeats);
+  console.log(selectedSeats.toString());  
+  console.log(selectedSeats.length);
+  console.log(movie);
+  console.log(theatre);
 }
 
+constructor(private r:ActivatedRoute)
+{}
 
-ngOnInit() {
- 
+ngOnInit(): void 
+{
+  this.r.queryParamMap.subscribe(params => {
+    console.log(params);
+    this.movie = params.get('movie');
+    this.theatre = params.get('theatre')
+  })
 }
-
   
 }
+

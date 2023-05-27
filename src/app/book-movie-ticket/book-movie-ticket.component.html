@@ -1,7 +1,9 @@
 <div class="content" ng-controller="bookings">
-
-    <p>Screen this way! :)</p>
-
+<div style="text-align: center;" >
+    <p style="text-align: center;">Screen this way! :)</p>
+    <p style="text-align: center;">{{movie}}</p>
+    <p>{{theatre}}</p>
+</div>
     <table class="txt-center" style="text-align:center;">
        
         <thead style="text-align: center;">
@@ -17,8 +19,8 @@
             <tr *ngFor="let row of data.rowHeader">
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
                 <td *ngFor="let col of data.columnHeader; let i = index;">
-                    <span><button type="submit" [ngStyle]="{backgroundColor: bgColor}"
-                        (click)="onSelection(col,row)"><img class="movieicon" src="assets/images/armchair.png">
+                    <span><button type="submit"
+                        (click)="onSelection(col,row,movie,theatre)"><img class="movieicon" src="assets/images/armchair.png">
                 </button></span></td>
             </tr>
         </tbody>

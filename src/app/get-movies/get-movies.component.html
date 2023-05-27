@@ -11,13 +11,15 @@
 <div class="row" *ngIf="resultUpdated">
   <div class="column" *ngFor="let movie of movieList">
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="assets\images\Kanthara.jpg" alt="Card image cap">
+        <img class="card-img-top" [src]="movie.images" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">{{movie.movieName}}</p>
           <p class="card-text">{{movie.theatreName}}</p>
         </div>
         <div class="card-body" style="text-align: right;">
-            <a href="#" class="card-link">Book Ticket</a>
+          <button type="submit" class="btn btn-success mt-2"
+           (click)="onBooking(movie.movieName,movie.theatreName)">Book Ticket</button>
+            <!--<a href="/bookTicket" class="card-link">Book Ticket</a>-->
           </div>
       </div>
     </div>

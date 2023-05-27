@@ -36,5 +36,10 @@ export class UserService {
   {
       return this._http.post<ResetPassword>(baseUrl + '/reset-password' + data, httpOptions);
   }
+
+  userBooking(data: any): Observable<any>
+  {
+    return this._http.post<any>(baseUrl + '/ticketbooking' + data, httpOptions);
+  }
   
 }

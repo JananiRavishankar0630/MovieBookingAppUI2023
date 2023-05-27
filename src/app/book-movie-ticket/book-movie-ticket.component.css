@@ -1,15 +1,7 @@
-.seat
-{
- background-color: chartreuse;
- padding: 20px;
- width: 100%;
- text-align: center;
- margin-right: 30px;
-}
 .movieicon
 {
     font-size: 5px;
-    width:1cm;
+    width:0.8cm;
     
 }
 img:hover {
@@ -18,7 +10,6 @@ img:hover {
 .txt-center{
     text-align: center;
     margin: auto;
-    
 }
 table,tr, td, th {
     border-collapse: separate;
@@ -32,15 +23,6 @@ table,tr, td, th {
   img{
     border: none;
   }
-  
-  .green {
-    background-color: green;
-}
-
-.red {
-    background-color: red;
-}
-
   .hide {
      opacity: 0;
   }
