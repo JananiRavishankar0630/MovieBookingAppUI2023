@@ -28,10 +28,12 @@ export class ResetPasswordComponent {
     
     this._user.resetPassword(data).subscribe({
       next: result => { console.log(result); 
+      this._route.navigate(['/login'])
+      alert("Your password has been reset successfully");
     }
     })
-    alert("Your password has been reset successfully");
-    this._route.navigate(['/login'])
+    
+   
   }
 
   constructor(private _user:UserService,

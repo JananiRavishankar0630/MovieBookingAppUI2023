@@ -1,6 +1,22 @@
 <br>
 <br>
-<div>
+<div class="div">
+    <div class="row">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <div class="col-md-6">
+                <li class="nav-item">
+                    <button class="nav-link active btl" (click)="onClick('login')" id="pills-home-tab" data-toggle="pill" role="tab"
+                    aria-controls="pills-home" aria-selected="true">Login</button>
+                </li>
+            </div>
+            <div class="col-md-6">
+                <li class="nav-item">
+                    <button class="nav-link active btl" (click)="onClick('register')" id="pills-home-tab" data-toggle="pill" role="tab"
+                    aria-controls="pills-home" aria-selected="true">Register</button>
+                </li>
+            </div>
+        </ul>
+    </div>
     <form class="form-vertical justify-content-center" [formGroup]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
         <div class="form-group">
             <label class="control-label" for="userId" style="text-align: left;">UserId</label><br>

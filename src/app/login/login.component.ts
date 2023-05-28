@@ -50,6 +50,18 @@ export class LoginComponent {
   }
 }
 
+onClick(input: any)
+{
+  if(input == "login")
+  {
+    this._router.navigate(['/login']);
+  }
+  else
+  {
+    this._router.navigate(['/register']);
+  }
+}
+
 public logOut = () => {
   localStorage.removeItem("jwt");
   this._router.navigate(["/"]);

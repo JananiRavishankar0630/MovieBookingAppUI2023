@@ -30,10 +30,20 @@ export class UserRegistrationComponent {
     //console.log("Registered successfully");
     }
     })
-
     this._router.navigate(['/login']);
-
   }
+
+  onClick(input: any)
+{
+  if(input == "login")
+  {
+    this._router.navigate(['/login']);
+  }
+  else
+  {
+    this._router.navigate(['/register']);
+  }
+}
   constructor(private _router: Router,
    private _fb: FormBuilder, 
    private _user: UserService)

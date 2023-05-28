@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: darkslategray; color: white;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.div {
+    background-color: #FFC107;
+    border: none;
+    border-radius: 20px;
+    margin: auto;
+    width: 20%;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:12px;
+}
