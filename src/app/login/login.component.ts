@@ -30,10 +30,16 @@ export class LoginComponent {
     {
       const token = result.token;
       localStorage.setItem("jwt", token);
+     /*  sessionStorage.setItem('id', data.id);
+      var data = sessionStorage.getItem('id');
+console.log(data) to see the id in the console */
       console.log("Logged in successfully");
       this.displayLoading=false;
       this.isLoggedIn = false;
-      this._router.navigate(['/userHome']);
+      this._router.navigate(['/getmovies'],
+      {queryParams:{
+        user : result.username
+      }});
     }/* , err => {
       this.displayError = true;
       this.displayLoading = false; */

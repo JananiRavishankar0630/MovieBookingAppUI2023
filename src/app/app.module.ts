@@ -19,6 +19,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.
     AdminDashboardComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    BookMovieTicketComponent
+    BookMovieTicketComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

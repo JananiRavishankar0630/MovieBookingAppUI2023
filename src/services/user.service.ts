@@ -39,7 +39,7 @@ export class UserService {
 
   userBooking(data: any): Observable<any>
   {
-    return this._http.post<any>(baseUrl + '/ticketbooking' + data, httpOptions);
+    return this._http.post<any>(baseUrl + '/ticketbooking' , data, httpOptions);
   }
   
 }
