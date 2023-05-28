@@ -5,13 +5,15 @@
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <div class="col-md-6">
                 <li class="nav-item">
-                    <button class="nav-link active btl" (click)="onClick('login')" id="pills-home-tab" data-toggle="pill" role="tab"
+                    <button class="nav-link active btl" (click)="onClick('login')"
+                     style="font-size: 15px;font-weight: bold;" id="pills-home-tab" data-toggle="pill" role="tab"
                     aria-controls="pills-home">Login</button>
                 </li>
             </div>
             <div class="col-md-6">
                 <li class="nav-item">
-                    <button class="nav-link active btl" (click)="onClick('register')" id="pills-home-tab" data-toggle="pill" role="tab"
+                    <button class="nav-link active btl" (click)="onClick('register')" id="pills-home-tab" 
+                    style="font-size: 15px;font-weight: bold;" data-toggle="pill" role="tab"
                     aria-controls="pills-home">Register</button>
                 </li>
             </div>
@@ -20,18 +22,18 @@
     <br/>
     <form class="form-vertical" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
         <div class="form-group">
-            <label class="control-label" for="username">Username</label><br>
+            <label class="control-label">Username</label><br>
             <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" ngModel
                 required>
         </div>
         <div class="form-group">
-            <label class="control-label" for="Password">Password</label><br>
+            <label class="control-label">Password</label><br>
             <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" ngModel
                 required />
 
         </div>
         <div class="form-group">
-            <label class="control-label" for="Roles">Role</label><br>
+            <label class="control-label">Role</label><br>
             <!--<input type="password" class="form-control" formControlName="roles" placeholder="Enter Role" ngModel
                 required />-->
             <select class="form-control" formControlName="roles" aria-placeholder="Select Role" ngModel required>

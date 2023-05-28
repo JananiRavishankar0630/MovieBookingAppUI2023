@@ -29,10 +29,10 @@ export class LoginComponent {
     next: result =>
     {
       const token = result.token;
+      const username = loginData.username;
+      console.log(username);
       localStorage.setItem("jwt", token);
-     /*  sessionStorage.setItem('id', data.id);
-      var data = sessionStorage.getItem('id');
-console.log(data) to see the id in the console */
+      localStorage.setItem("currentUser", username);
       console.log("Logged in successfully");
       this.displayLoading=false;
       this.isLoggedIn = false;

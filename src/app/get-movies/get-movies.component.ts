@@ -16,7 +16,7 @@ export class GetMoviesComponent {
   search: any = "";
   resultUpdated: Boolean = false;
   movieList: MovieDetail[] | any;  
-
+ username: any;
   constructor(private _router: Router,
     private _mv: MovieService,
     private _fb:FormBuilder,
@@ -29,6 +29,8 @@ export class GetMoviesComponent {
         console.log(result.data);
         this.movieList = result;
         console.log(this.movieList);
+        this.username = localStorage.getItem('currentUser');
+        console.log(this.username);
       }
 
     })

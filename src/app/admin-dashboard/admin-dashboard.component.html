@@ -6,9 +6,9 @@
                 <p class="card-text">{{movie.movieName}}</p>
                 <p class="card-text">{{movie.theatreName}}</p>
             </div>
-            <img class="card-img-top" src="assets\images\Kanthara.jpg" alt="Card image cap">
-            <div class="card-body" style="text-align: right;" (click)="getTicketId(movie.movieName)">
-                <button type="submit" class="btn btn-primary"
+            <img class="card-img-top" [src]="movie.images" alt="Card image cap">
+            <div class="card-body" style="text-align: right;">
+               <button type="submit" class="btn btn-primary" (click)="getTicketId(movie.movieName)"
                             text="Update Ticket Status">Update Status</button>
                 <button type="submit" class="btn btn-danger" (click)="deleteMovie(movie.movieName)"
                             text="Delete Movie">Delete Movie</button>            

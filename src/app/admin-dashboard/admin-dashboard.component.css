@@ -2,19 +2,25 @@
 {   margin:0;   padding:0;   border:none; width:80%;}
 .card
 {
-   border-style:ridge; width:500px;
+   border-style:ridge; width:50%;
 }
 .card-img-top
 {
    max-width: 100%;
 }
 .column {
+   text-align: center;
    float: left;
-   width: 25%;
-   padding: 0 10px;
+   width: 20%;
+   height: 30%;
+   padding: 0 20px;
  }
  .card-title
  {
     text-align: center; font-weight: bold; font-family: 'Times New Roman', Times, serif;
-    
- }
+}
+ img
+{
+   width:100%;
+   height: 250px;
+}
