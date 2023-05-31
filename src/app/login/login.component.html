@@ -23,15 +23,22 @@
     <form class="form-vertical" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
         <div class="form-group">
             <label class="control-label">Username</label><br>
-            <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" ngModel
+            <input type="text" [class.is-invalid] = "loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+            class="form-control" formControlName="username" placeholder="Enter Email" ngModel
                 required>
+            <div *ngIf="f['username'].errors && f['username'].errors['required']" class="text-danger">EmailId
+                    is required.</div>
         </div>
+        
+        
         <div class="form-group">
             <label class="control-label">Password</label><br>
             <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" ngModel
                 required />
-
+                <div *ngIf="f['password'].errors && f['password'].errors['required']" class="text-danger">Password
+                    is required.</div>
         </div>
+       
         <div class="form-group">
             <label class="control-label">Role</label><br>
             <!--<input type="password" class="form-control" formControlName="roles" placeholder="Enter Role" ngModel
@@ -41,6 +48,8 @@
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
             </select>
+            <div *ngIf="f['roles'].errors && f['roles'].errors['required']" class="text-danger">Roles field
+                is required.</div>
         </div>
         <button type="submit" class="btn btn-success mt-2" style="text-align: right;">Login</button>
         <div *ngIf="isLoggedIn">

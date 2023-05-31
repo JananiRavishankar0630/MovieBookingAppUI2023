@@ -11,7 +11,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginComponent {
   loginForm = this._fb.group({
-    username: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     password: new FormControl('', [Validators.required]),
     roles: new FormControl('', [Validators.required])
   });
@@ -71,6 +71,10 @@ onClick(input: any)
 public logOut = () => {
   localStorage.removeItem("jwt");
   this._router.navigate(["/"]);
+}
+
+get f() {
+  return this.loginForm.controls;
 }
  //Error in login
 
