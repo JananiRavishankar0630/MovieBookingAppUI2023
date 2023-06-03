@@ -30,16 +30,22 @@ export class LoginComponent {
     {
       const token = result.token;
       const username = loginData.username;
+      console.log(loginData);
+      console.log(result);
       console.log(username);
       localStorage.setItem("jwt", token);
-      localStorage.setItem("currentUser", username);
+     // localStorage.setItem("currentUser", username);
       console.log("Logged in successfully");
       this.displayLoading=false;
       this.isLoggedIn = false;
-      this._router.navigate(['/getmovies'],
-      {queryParams:{
-        user : result.username
-      }});
+      if (loginData.roles == "User")
+      {
+      this._router.navigate(['/getmovies']);
+      }
+      else
+      {
+      this._router.navigate(['/admin-dash']);
+      }
     }/* , err => {
       this.displayError = true;
       this.displayLoading = false; */
@@ -48,6 +54,7 @@ export class LoginComponent {
 
  isUserAuthenticated() {
   const token = localStorage.getItem("jwt");
+  //const currentUser =localStorage.getItem("currentUser");
   if (token && !this.jwtHelper.isTokenExpired(token)) {
     return true;
   }
@@ -73,9 +80,7 @@ public logOut = () => {
   this._router.navigate(["/"]);
 }
 
-get f() {
-  return this.loginForm.controls;
-}
+get f() {  return this.loginForm.controls;}
  //Error in login
 
  constructor(private _router: Router,

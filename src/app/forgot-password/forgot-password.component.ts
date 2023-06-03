@@ -22,6 +22,8 @@ export class ForgotPasswordComponent {
     }})
   }
 
+
+  
   constructor(private _user:UserService,
     private _route:Router){}
 }

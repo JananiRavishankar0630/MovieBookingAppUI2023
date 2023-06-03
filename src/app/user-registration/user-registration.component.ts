@@ -33,7 +33,7 @@ export class UserRegistrationComponent {
     this._router.navigate(['/login']);
   }
 
-  onClick(input: any)
+onClick(input: any)
 {
   if(input == "login")
   {
@@ -44,6 +44,9 @@ export class UserRegistrationComponent {
     this._router.navigate(['/register']);
   }
 }
+
+get f() {  return this.registrationForm.controls;}
+
   constructor(private _router: Router,
    private _fb: FormBuilder, 
    private _user: UserService)

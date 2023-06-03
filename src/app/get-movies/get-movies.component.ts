@@ -2,6 +2,8 @@ import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { first } from 'rxjs/operators';
 import { MovieDetail } from 'src/Models/Movie.models';
 import { MovieService } from 'src/services/movie.service';
 
@@ -16,12 +18,14 @@ export class GetMoviesComponent {
   search: any = "";
   resultUpdated: Boolean = false;
   movieList: MovieDetail[] | any;  
- username: any;
+  username: any;
+
   constructor(private _router: Router,
     private _mv: MovieService,
-    private _fb:FormBuilder,
-    private _r:ActivatedRoute) { }
+    private jwtHelper: JwtHelperService) { }
+
   ngOnInit(): void {
+    localStorage.getItem("jwt");
     this._mv.getMovies().subscribe({
       next: result => {
         console.log("List of Movies");
@@ -29,8 +33,8 @@ export class GetMoviesComponent {
         console.log(result.data);
         this.movieList = result;
         console.log(this.movieList);
-        this.username = localStorage.getItem('currentUser');
-        console.log(this.username);
+        //this.username = localStorage.getItem('currentUser');
+        //console.log(this.username);
       }
 
     })
@@ -62,6 +66,6 @@ export class GetMoviesComponent {
       theatre: theatreName
     }})
   }
-  
+
   
 }

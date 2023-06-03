@@ -26,12 +26,13 @@ const routes: Routes = [
   },
   {
     path: 'getmovies',
-    component: GetMoviesComponent
-    //canActivate: [AuthGuard]
+    component: GetMoviesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin-dash',
-    component: AdminDashboardComponent
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'forgotpassword',
@@ -43,7 +44,8 @@ const routes: Routes = [
   },
   {
     path: 'bookticket',
-    component: BookMovieTicketComponent
+    component: BookMovieTicketComponent,
+    canActivate: [AuthGuard]
   }
   
 ];

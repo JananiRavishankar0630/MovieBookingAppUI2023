@@ -24,7 +24,7 @@ onSelection(column: any, row:any, movie:any,theatre: any)
 {
   selectedSeats.push(row + column);
   this.payload = {
-    emailId: "ABCin456@gmail.com",
+    emailId: localStorage.getItem("currentUser"),
     movieName: movie,
     theatreName: theatre,
     ticketId: '',

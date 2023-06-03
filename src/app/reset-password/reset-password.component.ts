@@ -36,6 +36,8 @@ export class ResetPasswordComponent {
    
   }
 
+get f(){ return this.resetPasswordform.controls;}
+
   constructor(private _user:UserService,
     private _route:Router,
     private _fb: FormBuilder,
