@@ -1,37 +1,22 @@
-<nav class="nav navbar-custom">
-    <div class="container-fluid">
-        <div class="row header">
-            <div class="col-sm-2">
-                <a class="navbar-brand" href="#">
-                    <img src="assets\images\Logo1.png" width=70 height=60>
-                </a>
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <h2>Book Your Movie</h2>
-            </div>
-            <div class="col-lg-2" *ngIf="isLoggedIn">
-                <button type="submit" (click)="logOut()">Logout</button>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- <mat-toolbar color="primary">
-    <span>Bookings</span>
+<mat-toolbar style="background-color: goldenrod;">
+    <h3>Book Your Movie</h3>
     
     <span class="logout">
       <span class="bell-icon">
         <mat-icon>notifications_none</mat-icon>
       </span>
-       <button  mat-mini-fab matTooltip="Janani" [matMenuTriggerFor]="menu" [matTooltipPosition]="position.value"  color="accent">
+       <button  mat-mini-fab [matTooltip]=username [matMenuTriggerFor]="menu" color="accent">
         <mat-icon>perm_identity</mat-icon>
       </button>
+     
       <mat-menu #menu="matMenu">
-          <button mat-menu-item>
+          <button mat-menu-item (click)="logOut()" >
             <mat-icon>power_settings_new</mat-icon>
             <span>Logout</span>
           </button>
       </mat-menu>
+    
     </span>
 
-  </mat-toolbar>  -->
+  </mat-toolbar>
+ 

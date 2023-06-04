@@ -25,15 +25,16 @@
             </tr>
         </tbody>
     </table>
-    <button type="submit" class="btn btn-success" (click)="bookingConfirmation()">Confirm Booking</button>
     <table>
         <tr>
             <td>
-                <input type="checkbox" >Booked Seats &nbsp;
-                <input type="checkbox"> Selected Seats &nbsp;
-                <input type="checkbox"> Remaining Seats 
+                <input type="checkbox">   Booked Seats &nbsp;
+                <input type="checkbox">   Selected Seats &nbsp;
+                <input type="checkbox">   Remaining Seats 
             </td>
         </tr>
-    </table>    
+    </table>  
+    
+    <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>
 

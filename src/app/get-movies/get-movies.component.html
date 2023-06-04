@@ -8,7 +8,7 @@
       </button>
     </div>
 </div>
-<div class="row" *ngIf="resultUpdated">
+<div class="card-collection row" *ngIf="resultUpdated">
   <div class="column" *ngFor="let movie of movieList">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" [src]="movie.images" alt="Card image cap">

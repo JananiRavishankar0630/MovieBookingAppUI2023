@@ -22,6 +22,9 @@ import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { authInterceptorProviders } from 'src/_helpers/auth.inceptors';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { authInterceptorProviders } from 'src/_helpers/auth.inceptors';
     RouterModule,
     MatProgressBarModule,
     MatIconModule,
-    MatFormFieldModule  
+    MatFormFieldModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [AuthGuard, 
     authInterceptorProviders],

@@ -10,12 +10,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  username: any;
   public positionOptions: TooltipPosition[] = ['left']; // Tooltip postion
-  // tslint:disable-next-line:typedef
   public position = new FormControl(this.positionOptions[0]); 
+
 isLoggedIn: boolean= false;
   public logOut = () => {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("currentUser");
     this._router.navigate(["/login"]);
   }
 
@@ -34,6 +36,7 @@ isLoggedIn: boolean= false;
   {}
 
   ngOnInit(){
-    this.isUserAuthenticated();
+   // this.isUserAuthenticated();
+    this.username=localStorage.getItem("currentUser");
   }
 }

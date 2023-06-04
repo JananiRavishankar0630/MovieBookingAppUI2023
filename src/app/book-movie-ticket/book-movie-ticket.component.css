@@ -26,4 +26,8 @@ table,tr, td, th {
   .hide {
      opacity: 0;
   }
+ .bookingbutton{
+   text-align: right;
+   margin-left: 60%;
+ }
 

@@ -8,7 +8,13 @@
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    font-size:12px;
 }
-
+.card-collection{
+   margin: 30px;
+   margin-left: auto;
+   width: auto;
+   padding: 30px;
+   text-align: center;
+}
 .card
 {
    text-align: center;
