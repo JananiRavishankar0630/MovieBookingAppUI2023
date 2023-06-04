@@ -21,6 +21,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { authInterceptorProviders } from 'src/_helpers/auth.inceptors';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HeaderComponent } from './header/header.component';
     MatIconModule,
     MatFormFieldModule  
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, 
+    authInterceptorProviders],
   //providers: [],
   bootstrap: [AppComponent]
 })
