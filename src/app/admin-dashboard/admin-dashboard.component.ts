@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { MovieDetail } from 'src/Models/Movie.models';
+import { TicketBooking } from 'src/Models/Ticket.models';
 import { MovieService } from 'src/services/movie.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { MovieService } from 'src/services/movie.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-  ticketID: any = "";
+  ticketDetails: TicketBooking[] | any;
   resultUpdated: Boolean = false;
   movieList: MovieDetail[] | any;
   
@@ -31,27 +33,25 @@ export class AdminDashboardComponent {
     this._mv.deleteMovie(movieName).subscribe({
       next: result => 
       {
-        console.log(result);
-        alert("Movie details has been deleted");
+        this.ngOnInit();
+        console.log(result);       
       }
     })
+    alert("Movie details has been deleted");
   }
 
   getTicketId(movieName: string)
   {
-    this._mv.getTicketId(movieName).subscribe({
-      next:result =>
+    this._mv.getTicketId(movieName).subscribe(
+      result =>
       {
-        //this.ticketID = result;
-        //console.log(this.ticketID);
+        //console.log(typeof(result));
         console.log(result);
-        this.ticketID = result;
-        this.updateTicketStatus(result.ticketId);
-        return result;
-      }
-    })
-    console.log(this.ticketID);
-    
+        console.log(result.ticketid);
+       
+       this.updateTicketStatus(result.ticketid);
+      })//
+   // console.log(this.ticketID);
   }
 
   updateTicketStatus(ticketId: string)

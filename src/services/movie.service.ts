@@ -2,7 +2,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieDetail } from 'src/Models/Movie.models';
-import { Ticket } from 'src/Models/Ticket.models';
+import { Ticket, TicketBooking } from 'src/Models/Ticket.models';
 
 const baseUrl = "https://localhost:7083/movie";
 const httpOptions = {
@@ -27,7 +27,7 @@ export class MovieService {
 
   getTicketId(movieName: string) : Observable<any>
   {
-      return this._http.get<any>(baseUrl + '/GetTicketId/' + movieName, httpOptions);
+      return this._http.get<TicketBooking>(baseUrl + '/GetTicketId/' + movieName, httpOptions);
   }
 
   updateTicketStatus(ticketId: string): Observable<any>

@@ -7,3 +7,12 @@ export interface Ticket {
     TicketStatus: string
 
 }
+
+export interface TicketBooking {
+    EmailId: string,
+    MovieName: string,
+    TheatreName: string,
+    TicketId: string,
+    TotalSeatsBooked : string,
+    SeatsBooked: string
+}
