@@ -1,8 +1,14 @@
 .input-group
 {   margin:0;   padding:0;   border:none; width:80%;}
+.card-collection{
+   margin-left: auto;
+   width: auto;
+   padding: 20px;
+   text-align: center;
+}
 .card
 {
-   border-style:ridge; width:50%;
+   border-style:none; width:80%;
 }
 .card-img-top
 {

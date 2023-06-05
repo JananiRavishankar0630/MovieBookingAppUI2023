@@ -1,11 +1,11 @@
 <mat-toolbar style="background-color: goldenrod;">
     <h3>Book Your Movie</h3>
     
-    <span class="logout">
+    <span *ngIf="isUserAuthenticated()" class="logout">
       <span class="bell-icon">
         <mat-icon>notifications_none</mat-icon>
       </span>
-       <button  mat-mini-fab [matTooltip]=username [matMenuTriggerFor]="menu" color="accent">
+       <button  mat-mini-fab [matTooltip]="username" [matMenuTriggerFor]="menu" color="accent">
         <mat-icon>perm_identity</mat-icon>
       </button>
      

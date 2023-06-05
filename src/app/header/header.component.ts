@@ -37,6 +37,6 @@ isLoggedIn: boolean= false;
 
   ngOnInit(){
    // this.isUserAuthenticated();
-    this.username=localStorage.getItem("currentUser");
+    this.username = localStorage.getItem("currentUser");
   }
 }
