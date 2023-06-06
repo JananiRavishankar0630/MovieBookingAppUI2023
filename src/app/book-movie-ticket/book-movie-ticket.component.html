@@ -1,6 +1,9 @@
 <div class="content" ng-controller="bookings">
 <div style="text-align: center;" >
     <p style="text-align: center;">Screen this way! :)</p>
+    <div class="container">
+    <div class="screen"></div>
+    </div>
     <p style="text-align: center;">{{movie}}</p>
     <p>{{theatre}}</p>
 </div>
@@ -19,21 +22,13 @@
             <tr *ngFor="let row of data.rowHeader">
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
                 <td *ngFor="let col of data.columnHeader; let i = index;">
-                    <span><button type="submit"
-                        (click)="onSelection(col,row,movie,theatre)"><img class="movieicon" src="assets/images/armchair.png">
+                    <span><button type="submit" 
+                        (click)="onSelection(col,row,movie,theatre)"><div class="seat"></div>
                 </button></span></td>
             </tr>
         </tbody>
     </table>
-    <table>
-        <tr>
-            <td>
-                <input type="checkbox">   Booked Seats &nbsp;
-                <input type="checkbox">   Selected Seats &nbsp;
-                <input type="checkbox">   Remaining Seats 
-            </td>
-        </tr>
-    </table>  
+    <div><br/></div>
     
     <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>

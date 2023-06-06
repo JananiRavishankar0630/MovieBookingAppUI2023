@@ -20,6 +20,7 @@ export class BookMovieTicketComponent {
   emailId: any; ticketId: any; totalSeatsBooked: any;
   seatsBooked: any;
   
+  
 onSelection(column: any, row:any, movie:any,theatre: any)
 {
   selectedSeats.push(row + column);

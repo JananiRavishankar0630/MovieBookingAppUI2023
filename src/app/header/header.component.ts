@@ -17,7 +17,7 @@ export class HeaderComponent {
 isLoggedIn: boolean= false;
   public logOut = () => {
     localStorage.removeItem("jwt");
-    localStorage.removeItem("currentUser");
+   // localStorage.removeItem("currentUser");
     this._router.navigate(["/login"]);
   }
 

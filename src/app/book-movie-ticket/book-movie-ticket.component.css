@@ -1,9 +1,4 @@
-.movieicon
-{
-    font-size: 5px;
-    width:0.8cm;
-    
-}
+
 img:hover {
     opacity: 1.0;
   }
@@ -18,6 +13,7 @@ table,tr, td, th {
     margin: auto;    
     border: none;   
     text-align :justify;
+    background-color: darkslategrey;
    }
   
   img{
@@ -30,4 +26,28 @@ table,tr, td, th {
    text-align: right;
    margin-left: 60%;
  }
+ * {
+  box-sizing: border-box;
+}
+ .container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+ .screen {
+  background-color: #fff;
+  height: 120px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-48deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+.seat {
+  background-color: #444451;
+  height: 26px;
+  width: 32px;
+  margin: 3px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
