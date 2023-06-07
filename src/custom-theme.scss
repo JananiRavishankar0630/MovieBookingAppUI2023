@@ -33,3 +33,6 @@ $MovieBookingApp-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($MovieBookingApp-theme);
 
+$selectedSeatColor: var(--background-color);
+$occupiedSeatColor: var(--background-color);
+$notSelected: var(--background-color);

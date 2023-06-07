@@ -13,8 +13,11 @@ const container = document.querySelector(".container");
 export class BookMovieTicketComponent {
   data = {
     rowHeader : ['A','B','C','D','E','F','G'],
-    columnHeader: ['1','2','3','4','5','6','7']
+    columnHeader: ['1','2','3','4','5','6','7'],
   }; 
+  isSelected : boolean = false;
+  isNotSelected : boolean = true;
+  isOccupied : boolean = false;
   payload = {};
   movie:any;
   theatre: any; 
@@ -22,7 +25,7 @@ export class BookMovieTicketComponent {
   seatsBooked: any;
   
   
-onSelection(column: any, row:any, movie:any,theatre: any,e: any)
+onSelection(column: any, row:any, movie:any,theatre: any)
 {
   selectedSeats.push(row + column);
   this.payload = {
@@ -33,12 +36,19 @@ onSelection(column: any, row:any, movie:any,theatre: any,e: any)
     totalSeatsBooked: selectedSeats.length,
     seatsBooked: selectedSeats.toString(),
   }
-  e.target.toggle()
+  this.isSelected = true;
+ 
   console.log(this.payload);
   //this.bookingConfirmation(this.payload);
   
 }
 
+getClass(e: any)
+{
+   return {'seat': 'isNotSelected',
+                        'seat selected': 'isSelected == true', 
+                        'seat occupied': 'isOccupied == true'}
+}
 bookingConfirmation()
 {
   console.log(JSON.stringify(this.payload));

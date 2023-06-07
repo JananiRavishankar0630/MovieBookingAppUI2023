@@ -1,6 +1,6 @@
 
 img:hover {
-    opacity: 1.0;
+    opacity: 2.0;
   }
 .txt-center{
     text-align: center;
@@ -43,16 +43,15 @@ table,tr, td, th {
 }
 .seat {
   background-color: #444451;
-  height: 26px;
-  width: 32px;
-  margin: 3px;
+  height: 30px;
+  width: 35px;
   font-size: 50px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .selected {
-  background-color: #0081cb;
+  background-color: green;
 }
 
 .occupied {
@@ -63,7 +62,17 @@ table,tr, td, th {
   justify-content: space-between;
   list-style-type: none;
   background: rgba(0,0,0,0.1);
-  padding: 5px 10px;
+  padding: 2px 2px;
   border-radius: 5px;
   color: #777;
+  text-align: center;
+}
+li small {
+  margin-left: 20px;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
 }

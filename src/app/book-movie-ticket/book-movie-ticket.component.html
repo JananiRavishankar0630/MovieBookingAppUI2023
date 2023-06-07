@@ -1,4 +1,4 @@
-<div class="content" ng-controller="bookings">
+<div class="content" style="color: white;">
 <div style="text-align: center;" >
     <p style="text-align: center;">Screen this way! :)</p>
     <div class="container">
@@ -22,25 +22,25 @@
             <tr *ngFor="let row of data.rowHeader">
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
                 <td *ngFor="let col of data.columnHeader; let i = index;">
-                    <span><button type="submit" 
-                        (click)="onSelection(col,row,movie,theatre,$event)"><div class="seat"></div>
-                </button></span></td>
+                    <button type="submit" 
+                        (click)="onSelection(col,row,movie,theatre)"><div [ngClass]="{seat: isNotSelected,
+                        'seat selected': isSelected}"></div>
+                </button></td>
             </tr>
         </tbody>
     </table>
-    <div><br/> <ul class="showcase" style="text-align: center;">
+    <ul class="showcase">
         <li>
-          <div class="seat"></div><small>N/A</small> 
-          
+          <div class="seat"></div><small style="color: white;">N/A</small>           
         </li>
         <li>
-          <div class="seat selected"></div><small>Selected</small>  
+          <div class="seat selected"></div><small style="color: white;">Selected</small>  
         </li>
         <li>
-          <div class="seat occupied"></div><small>Occupied</small>  
+          <div class="seat occupied"></div><small style="color: white;">Occupied</small>  
          
         </li>    
-      </ul></div>
+      </ul>
     
     <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>
