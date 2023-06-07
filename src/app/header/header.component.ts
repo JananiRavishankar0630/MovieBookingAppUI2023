@@ -23,6 +23,7 @@ isLoggedIn: boolean= false;
 
   isUserAuthenticated() {    
     const token = localStorage.getItem("jwt");
+    this.username = localStorage.getItem("currentUser");
     this.isLoggedIn = true;
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       return true;
@@ -37,6 +38,6 @@ isLoggedIn: boolean= false;
 
   ngOnInit(){
    // this.isUserAuthenticated();
-    this.username = localStorage.getItem("currentUser");
+   
   }
 }

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
 
 const selectedSeats: string[] = [];
+const container = document.querySelector(".container");
 @Component({
   selector: 'app-book-movie-ticket',
   templateUrl: './book-movie-ticket.component.html',
@@ -21,7 +22,7 @@ export class BookMovieTicketComponent {
   seatsBooked: any;
   
   
-onSelection(column: any, row:any, movie:any,theatre: any)
+onSelection(column: any, row:any, movie:any,theatre: any,e: any)
 {
   selectedSeats.push(row + column);
   this.payload = {
@@ -30,10 +31,12 @@ onSelection(column: any, row:any, movie:any,theatre: any)
     theatreName: theatre,
     ticketId: '',
     totalSeatsBooked: selectedSeats.length,
-    seatsBooked: selectedSeats.toString()
+    seatsBooked: selectedSeats.toString(),
   }
+  e.target.toggle()
   console.log(this.payload);
   //this.bookingConfirmation(this.payload);
+  
 }
 
 bookingConfirmation()

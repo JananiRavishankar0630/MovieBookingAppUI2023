@@ -23,12 +23,24 @@
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
                 <td *ngFor="let col of data.columnHeader; let i = index;">
                     <span><button type="submit" 
-                        (click)="onSelection(col,row,movie,theatre)"><div class="seat"></div>
+                        (click)="onSelection(col,row,movie,theatre,$event)"><div class="seat"></div>
                 </button></span></td>
             </tr>
         </tbody>
     </table>
-    <div><br/></div>
+    <div><br/> <ul class="showcase" style="text-align: center;">
+        <li>
+          <div class="seat"></div><small>N/A</small> 
+          
+        </li>
+        <li>
+          <div class="seat selected"></div><small>Selected</small>  
+        </li>
+        <li>
+          <div class="seat occupied"></div><small>Occupied</small>  
+         
+        </li>    
+      </ul></div>
     
     <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>

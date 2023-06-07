@@ -34,7 +34,7 @@ export class LoginComponent {
       console.log(result);
       console.log(username);
       localStorage.setItem("jwt", token);
-     // localStorage.setItem("currentUser", username);
+      localStorage.setItem("currentUser", username);
       console.log("Logged in successfully");
       this.displayLoading=false;
       this.isLoggedIn = false;
