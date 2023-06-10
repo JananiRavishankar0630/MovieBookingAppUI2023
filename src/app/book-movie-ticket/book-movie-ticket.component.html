@@ -21,27 +21,22 @@
         <tbody>
             <tr *ngFor="let row of data.rowHeader">
                 <span [ngClass]="{'hide':row == 'null'}" style="width:150px"><td> {{row}}</td> </span>
-                <td *ngFor="let col of data.columnHeader; let i = index;">
-                    <button type="submit" 
-                        (click)="onSelection(col,row,movie,theatre)"><div [ngClass]="{seat: isNotSelected,
-                        'seat selected': isSelected}"></div>
+                <td *ngFor="let col of data.columnHeader; let i = index;" [ngSwitch]="getStatus(row + col)">
+                    <button type="submit" class="seat"
+                        (click)="onSelection(row + col,movie,theatre)">
+                        <div *ngSwitchCase="'selected'" class="seat selected"></div>
+                        <div *ngSwitchCase="'reserved'" class="seat reserved"></div>
+                        <div *ngSwitchDefault class="free"></div>
                 </button></td>
             </tr>
         </tbody>
     </table>
-    <ul class="showcase">
-        <li>
-          <div class="seat"></div><small style="color: white;">N/A</small>           
-        </li>
-        <li>
-          <div class="seat selected"></div><small style="color: white;">Selected</small>  
-        </li>
-        <li>
-          <div class="seat occupied"></div><small style="color: white;">Occupied</small>  
-         
-        </li>    
-      </ul>
-    
+    <div class="legend">    
+          <span class="seat"></span><small style="color: white;">N/A</small>           
+          <span class="seat selected"></span><small style="color: white;">Selected</small>  
+          <span class="seat reserved"></span><small style="color: white;">Reserved</small>  
+    </div>
     <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>
+
 

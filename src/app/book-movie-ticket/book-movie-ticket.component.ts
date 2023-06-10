@@ -15,8 +15,9 @@ export class BookMovieTicketComponent {
     rowHeader : ['A','B','C','D','E','F','G'],
     columnHeader: ['1','2','3','4','5','6','7'],
   }; 
+  reserved: string[] = ['A2', 'A3', 'F5', 'F1', 'G4'];
   isSelected : boolean = false;
-  isNotSelected : boolean = true;
+  isAvailable : boolean = false;
   isOccupied : boolean = false;
   payload = {};
   movie:any;
@@ -25,9 +26,10 @@ export class BookMovieTicketComponent {
   seatsBooked: any;
   
   
-onSelection(column: any, row:any, movie:any,theatre: any)
+onSelection(seatPos: string, movie:any,theatre: any)
 {
-  selectedSeats.push(row + column);
+  //selectedSeats.push(row + column);
+  this.seatClicked(seatPos);
   this.payload = {
     emailId: localStorage.getItem("currentUser"),
     movieName: movie,
@@ -36,19 +38,41 @@ onSelection(column: any, row:any, movie:any,theatre: any)
     totalSeatsBooked: selectedSeats.length,
     seatsBooked: selectedSeats.toString(),
   }
-  this.isSelected = true;
- 
-  console.log(this.payload);
-  //this.bookingConfirmation(this.payload);
-  
+   console.log(this.payload);
+  //this.bookingConfirmation(this.payload);  
 }
 
-getClass(e: any)
+onClick(e: any)
 {
-   return {'seat': 'isNotSelected',
-                        'seat selected': 'isSelected == true', 
-                        'seat occupied': 'isOccupied == true'}
+  console.log(e.target.value);
+  this.isSelected = true;
 }
+
+ //return status of each seat
+ getStatus = (seatPos: string) => {
+  if(this.reserved.indexOf(seatPos) !== -1) {
+      return 'reserved';
+  }
+  else if(selectedSeats.indexOf(seatPos) !== -1) {
+      return 'selected';
+  }
+  else
+  {
+    return '';
+  }
+}
+
+seatClicked = (seatPos: string) => {
+  var index = selectedSeats.indexOf(seatPos);
+  
+  if(index !== -1) {
+      // seat already selected, remove
+      selectedSeats.splice(index, 1)
+  }    //push to selected array only if it is not reserved
+  else if(this.reserved.indexOf(seatPos) === -1)
+          selectedSeats.push(seatPos);
+  }
+
 bookingConfirmation()
 {
   console.log(JSON.stringify(this.payload));
@@ -57,6 +81,7 @@ bookingConfirmation()
   })
 }
 
+
 constructor(private r:ActivatedRoute,
   private _fb:FormBuilder,
   private _user: UserService)
@@ -64,12 +89,13 @@ constructor(private r:ActivatedRoute,
 
 ngOnInit(): void 
 {
+ 
   this.r.queryParamMap.subscribe(params => {
     console.log(params);
     this.movie = params.get('movie');
     this.theatre = params.get('theatre')
   })
 }
-  
+
 }
 

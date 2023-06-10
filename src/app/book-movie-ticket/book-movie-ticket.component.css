@@ -42,7 +42,7 @@ table,tr, td, th {
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 .seat {
-  background-color: #444451;
+  background-color: rgb(95, 42, 165);
   height: 30px;
   width: 35px;
   font-size: 50px;
@@ -53,9 +53,11 @@ table,tr, td, th {
 .selected {
   background-color: green;
 }
-
-.occupied {
-  background-color: #fff;
+.reserved {
+  color: black;
+}
+.freeSeat {
+  color:hotpink;
 }
 .showcase{
   display: flex;
@@ -75,4 +77,11 @@ li {
   align-items: center;
   justify-content: center;
   margin: 0 10px;
+}
+.legend{
+  font-size: 14px;
+}
+.legend > .padding-left
+{
+padding-left: 15px;
 }
