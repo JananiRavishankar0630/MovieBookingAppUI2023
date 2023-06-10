@@ -1,7 +1,5 @@
 
-img:hover {
-    opacity: 2.0;
-  }
+
 .txt-center{
     text-align: center;
     margin: auto;
@@ -42,7 +40,7 @@ table,tr, td, th {
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 .seat {
-  background-color: rgb(95, 42, 165);
+  background-color:grey;
   height: 30px;
   width: 35px;
   font-size: 50px;
@@ -54,34 +52,20 @@ table,tr, td, th {
   background-color: green;
 }
 .reserved {
-  color: black;
+  background-color: #ce4844;
 }
 .freeSeat {
-  color:hotpink;
+  background-color: lightblue;
 }
-.showcase{
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  background: rgba(0,0,0,0.1);
-  padding: 2px 2px;
-  border-radius: 5px;
-  color: #777;
-  text-align: center;
-}
+
 li small {
   margin-left: 20px;
+  font-size: 14px;
 }
 li {
+  float: left;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 10px;
-}
-.legend{
-  font-size: 14px;
-}
-.legend > .padding-left
-{
-padding-left: 15px;
 }

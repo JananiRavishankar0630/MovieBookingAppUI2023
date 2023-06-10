@@ -16,9 +16,6 @@ export class BookMovieTicketComponent {
     columnHeader: ['1','2','3','4','5','6','7'],
   }; 
   reserved: string[] = ['A2', 'A3', 'F5', 'F1', 'G4'];
-  isSelected : boolean = false;
-  isAvailable : boolean = false;
-  isOccupied : boolean = false;
   payload = {};
   movie:any;
   theatre: any; 
@@ -26,27 +23,11 @@ export class BookMovieTicketComponent {
   seatsBooked: any;
   
   
-onSelection(seatPos: string, movie:any,theatre: any)
+/* onSelection(seatPos: string)
 {
-  //selectedSeats.push(row + column);
   this.seatClicked(seatPos);
-  this.payload = {
-    emailId: localStorage.getItem("currentUser"),
-    movieName: movie,
-    theatreName: theatre,
-    ticketId: '',
-    totalSeatsBooked: selectedSeats.length,
-    seatsBooked: selectedSeats.toString(),
-  }
    console.log(this.payload);
-  //this.bookingConfirmation(this.payload);  
-}
-
-onClick(e: any)
-{
-  console.log(e.target.value);
-  this.isSelected = true;
-}
+} */
 
  //return status of each seat
  getStatus = (seatPos: string) => {
@@ -62,7 +43,7 @@ onClick(e: any)
   }
 }
 
-seatClicked = (seatPos: string) => {
+seatSelected = (seatPos: string) => {
   var index = selectedSeats.indexOf(seatPos);
   
   if(index !== -1) {
@@ -75,6 +56,14 @@ seatClicked = (seatPos: string) => {
 
 bookingConfirmation()
 {
+  this.payload = {
+    emailId: localStorage.getItem("currentUser"),
+    movieName: this.movie,
+    theatreName: this.theatre,
+    ticketId: '',
+    totalSeatsBooked: selectedSeats.length,
+    seatsBooked: selectedSeats.toString(),
+  }
   console.log(JSON.stringify(this.payload));
   this._user.userBooking(JSON.stringify(this.payload)).subscribe({
     next: result =>{console.log(result);}
