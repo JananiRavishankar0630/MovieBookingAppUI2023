@@ -13,12 +13,12 @@ import { BookMovieTicketComponent } from './book-movie-ticket/book-movie-ticket.
 
 const routes: Routes = [
   { 
-    path: 'login', 
+    path: '', 
     component: LoginComponent
   },
-  {
-    path: 'userHome',
-    component: UserHomeComponent,
+  { 
+    path: 'login', 
+    component: LoginComponent
   },
   { 
     path: 'register', 

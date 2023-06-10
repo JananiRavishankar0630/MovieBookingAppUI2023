@@ -48,20 +48,15 @@
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
             </select>
-            <div *ngIf="f['roles'].errors && f['roles'].errors['required']" class="text-danger">EmailId
+            <div *ngIf="f['roles'].errors && f['roles'].errors['required']" class="text-danger">Roles field
                 is required.</div>    
         </div>
         <button type="submit" class="btn btn-success mt-2" style="text-align: right;">Login</button>
-        <div *ngIf="isLoggedIn">
-            <div class="alert alert-success" *ngIf="isLoggedIn">
-                Logged in as {{ roles }}.
-            </div>
-        </div>
     </form>
 
     <mat-progress-bar *ngIf="displayLoading" class="mt-5" mode="indeterminate"></mat-progress-bar>
     <div *ngIf="displayError" class="alert alert-danger mt-5">
-        Invalid Login
+        Incorrect username or password
     </div>
 
     <a href="/forgotpassword">Forgot Password?</a>

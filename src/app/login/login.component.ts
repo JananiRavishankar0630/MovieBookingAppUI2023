@@ -25,14 +25,11 @@ export class LoginComponent {
  {
    this.displayLoading=true;
    this.isLoggedIn = true;
-   this._user.login(loginData).subscribe({
-    next: result =>
+   this._user.login(loginData).subscribe(
+    result =>
     {
       const token = result.token;
       const username = loginData.username;
-      console.log(loginData);
-      console.log(result);
-      console.log(username);
       localStorage.setItem("jwt", token);
       localStorage.setItem("currentUser", username);
       console.log("Logged in successfully");
@@ -46,9 +43,10 @@ export class LoginComponent {
       {
       this._router.navigate(['/admin-dash']);
       }
-    }/* , err => {
+    }, err => {
+      console.log(err);
       this.displayError = true;
-      this.displayLoading = false; */
+      this.displayLoading = false;
     })    
  }
 

@@ -1,6 +1,7 @@
 <div class="input-group row form-group">
  <div class="col-md-8">
-        <input id="search-input" class="form-control" type="search" #form1 placeholder="Search for movie name" class="form-control" />
+        <input id="search-input" class="form-control" type="search" #form1 
+        placeholder="Search for movie name" (change)="onChange($event)" class="form-control" />
     </div>
     <div class="col-md-2">
       <button id="search-button" type="button" class="btn btn-primary" (click)="getMoviesByName(form1.value)">
@@ -24,4 +25,5 @@
       </div>
     </div>
 </div>
+
 

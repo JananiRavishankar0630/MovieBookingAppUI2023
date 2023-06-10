@@ -66,14 +66,20 @@ bookingConfirmation()
   }
   console.log(JSON.stringify(this.payload));
   this._user.userBooking(JSON.stringify(this.payload)).subscribe({
-    next: result =>{console.log(result);}
+    next: result =>{console.log(result);
+      if(result != null)
+      {
+        alert("Your ticket" + "" + result.ticketid + "" + "has been booked successfully")
+        this._route.navigate(['/getmovies']);
+      }}
+   
   })
 }
 
-
 constructor(private r:ActivatedRoute,
   private _fb:FormBuilder,
-  private _user: UserService)
+  private _user: UserService,
+  private _route: Router)
 {}
 
 ngOnInit(): void 
