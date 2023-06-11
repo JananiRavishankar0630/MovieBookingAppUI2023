@@ -62,6 +62,7 @@ export class AdminDashboardComponent {
        console.log(result);
       }
     })
+    alert("Ticket status has been updated");
   }
 
 }

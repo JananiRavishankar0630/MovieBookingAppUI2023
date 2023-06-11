@@ -11,6 +11,7 @@ import { UserService } from 'src/services/user.service';
 })
 export class ResetPasswordComponent {
   username : any;
+  isNotSame : boolean = false;
   resetPasswordform = this._fb.group({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -26,14 +27,12 @@ export class ResetPasswordComponent {
 }
   resetPassword(data: any) {
     
-    this._user.resetPassword(data).subscribe({
-      next: result => { console.log(result); 
+    this._user.resetPassword(data).subscribe(
+      result => { console.log(result); 
       this._route.navigate(['/login'])
       alert("Your password has been reset successfully");
-    }
-    })
-    
-   
+    }, err =>
+    {      this.isNotSame = true;  })
   }
 
 get f(){ return this.resetPasswordform.controls;}

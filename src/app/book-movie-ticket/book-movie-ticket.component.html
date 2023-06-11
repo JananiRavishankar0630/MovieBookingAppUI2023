@@ -7,13 +7,13 @@
     <p style="text-align: center;">{{movie}}</p>
     <p>{{theatre}}</p>
 </div>
-    <table class="txt-center" style="text-align:center;">
+    <table class="txt-center">
        
         <thead style="text-align: center;">
             <tr>
                 <td></td>
                 <td *ngFor="let col of data.columnHeader">
-                    <span style="display:inline-flex;width:50px;min-width:50px"> 
+                    <span style="display:inline-flex;width:45px;min-width:45px"> 
                      <td>{{col}}</td></span>
                 </td>
             </tr>
@@ -32,7 +32,7 @@
             </tr>
         </tbody>
     </table>
-   <div class="text-align:center;">
+    <div>
         <ul>
             <li>
                 <div class="seat"></div><small style="color: white;">Available</small>  
@@ -45,6 +45,7 @@
           </li>    
         </ul> 
     </div>
+<br/><br/>
     <button type="submit" class="btn btn-success bookingbutton" (click)="bookingConfirmation()" style="text-align: center;">Confirm Booking</button>
 </div>
 

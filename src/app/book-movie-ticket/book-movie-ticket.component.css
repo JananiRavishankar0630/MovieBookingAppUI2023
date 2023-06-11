@@ -4,10 +4,14 @@
     text-align: center;
     margin: auto;
 }
+ul{
+text-align: center;
+margin-left: 33%;
+}
 table,tr, td, th {
     border-collapse: separate;
     border-spacing: 0 15px;
-    padding: 10px;
+    padding: 5px;
     margin: auto;    
     border: none;   
     text-align :justify;
