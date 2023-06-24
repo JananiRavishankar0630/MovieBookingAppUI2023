@@ -1,10 +1,11 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Login, ResetPassword, UserDetail } from 'src/Models/Login.models';
 
-const baseUrl = "https://localhost:7083";
-
+//const baseUrl = "https://localhost:7083";
+const baseUrl = environment.apiUrl;
 //const baseUrl = "http://localhost:5099";
 //const loginData = {username, password};
 const httpOptions = {

@@ -1,10 +1,12 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { MovieDetail } from 'src/Models/Movie.models';
 import { Ticket, TicketBooking } from 'src/Models/Ticket.models';
 
-const baseUrl = "https://localhost:7083/movie";
+//const baseUrl = "https://localhost:7083/movie";
+const baseUrl = environment.apiUrl;
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
