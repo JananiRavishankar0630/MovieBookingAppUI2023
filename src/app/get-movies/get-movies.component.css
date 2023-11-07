@@ -28,6 +28,8 @@
 .card-img-top
 {
    max-width: 100%;
+    border-radius: 30px;
+    height: 280px;
 }
 .column {
    /* display: inline-flex;

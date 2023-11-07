@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Login, ResetPassword, UserDetail } from 'src/Models/Login.models';
 
-//const baseUrl = "https://localhost:7083";
-const baseUrl = 'https://moviebookingapi01.azurewebsites.net';
+const baseUrl = "https://localhost:7083";
+//const baseUrl = 'https://moviebookingapi01.azurewebsites.net';
 //const baseUrl = "http://localhost:5099";
 //const loginData = {username, password};
 const httpOptions = {
@@ -20,7 +20,7 @@ export class UserService {
 
   login(loginData: any) : Observable<any>
   {
-      return this._http.post<Login>(baseUrl + '/api/User/Login', loginData, httpOptions);
+      return this._http.post<Login>(baseUrl + '/userlogin', loginData, httpOptions);
   }
 
   registerUser(userData:any) : Observable<UserDetail>

@@ -5,8 +5,8 @@ import { environment } from 'src/environments/environment.prod';
 import { MovieDetail } from 'src/Models/Movie.models';
 import { Ticket, TicketBooking } from 'src/Models/Ticket.models';
 
-//const baseUrl = "https://localhost:7083/movie";
-const baseUrl = 'https://movieserviceapp01.azurewebsites.net/api/MovieBooking';
+const baseUrl = "https://localhost:7083/movie";
+//const baseUrl = environment.apiUrl;
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -19,26 +19,26 @@ export class MovieService {
 
   getMovies(): Observable<any>
   {
-      return this._http.get<MovieDetail>(baseUrl + '/GetAllMovies' , httpOptions);
+      return this._http.get<MovieDetail>(baseUrl, httpOptions);
   }
 
   getMoviesByName(movieName: string) : Observable<any>
   {
-      return this._http.get<MovieDetail>(baseUrl + '/GetMovieByName/' + movieName, httpOptions);
+      return this._http.get<MovieDetail>(baseUrl + 'getmoviebyname/' + movieName, httpOptions);
   }
 
   getTicketId(movieName: string) : Observable<any>
   {
-      return this._http.get<TicketBooking>('https://bookedserviceapp.azurewebsites.net' + '/api/Ticket/GetTicketId/' + movieName, httpOptions);
+      return this._http.get<TicketBooking>(baseUrl + '/GetTicketId/' + movieName, httpOptions);
   }
 
   updateTicketStatus(ticketId: string): Observable<any>
   {
-    return this._http.put<any>('https://bookedserviceapp.azurewebsites.net' + '/api/Ticket/UpdateTicketstatus/' + ticketId , httpOptions);
+    return this._http.put<any>(baseUrl + '/updateticketstatus/' + ticketId , httpOptions);
   }
 
   deleteMovie(movieName: string): Observable<any>
   {
-    return this._http.delete<any>(baseUrl + '/DeleteMovie/' + movieName, httpOptions);
+    return this._http.delete<any>(baseUrl + '/deletemovie/' + movieName, httpOptions);
   }
 }
